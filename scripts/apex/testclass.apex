@@ -1,1 +1,1 @@
-LoopClass.evenLoop();
+LoopClass.switchLoop();
