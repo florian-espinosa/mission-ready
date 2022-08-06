@@ -1,1 +1,1 @@
-LoopClass.switchLoop();
+Mission5.dingDong();
