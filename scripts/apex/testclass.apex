@@ -1,1 +1,1 @@
-Mission5.dingDong();
+ConditionalClass.displayPlayer('Cricket');
