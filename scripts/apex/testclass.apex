@@ -1,1 +1,1 @@
-ConditionalClass.displayPlayer('Cricket');
+System.debug('Return value: '+ConditionalClass.displayPlayer('Boxing'));

@@ -24,5 +24,7 @@ public with sharing class DemoClass {
         }
         System.debug('Bonus is '+bonus);
     }
+
     
+
 }
