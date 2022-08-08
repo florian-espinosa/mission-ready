@@ -7,6 +7,11 @@ public class MathClass {
         Integer output = firstNum + secondNum;
         System.debug(output);
     }
+
+    public static void calculateSum(Integer num1, Integer num2, Integer num3) {
+        Integer output = num1 + num2 + num3;
+        System.debug(output);
+    }
     
     public static void addTwoDecimals() {
         Decimal firstNum = 100.30;

@@ -39,7 +39,7 @@ public class ConditionalClass {
         System.debug(player);
     }
 
-    public static void displayPlayer(String game) {
+    public static void displayPlayer1(String game) {
         String player;
         if (game == 'Cricket') {
             player = 'Sachin Tendulkar';
@@ -53,5 +53,18 @@ public class ConditionalClass {
         System.debug(player);
     }
     
+    public static String displayPlayer(String game) {
+        String player;
+        if (game == 'Cricket') {
+            player = 'Sachin Tendulkar';
+        } else if (game == 'Boxing') {
+            player = 'Mohammad Ali';
+        } else if (game == 'Football') {
+            player = 'Ronaldo';
+        } else {
+            player = 'Not in the list.';
+        }
+        return player;
+    }
 
 }
