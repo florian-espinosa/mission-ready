@@ -42,4 +42,18 @@ public class CollectionClass {
         System.debug(myFlavours.get('Anchovies'));
     }
 
+    public static void carsList() {
+        List<String> cars = new List<String>();
+        cars.add('BMW Mini');
+        cars.add('Audi');
+        cars.add('Porsche');
+        cars.add('Ferrari');
+        cars.add('Mercedes Bens');
+
+        for (String car : cars) {
+            System.debug(car);
+        }
+
+    }
+
 }

@@ -67,4 +67,61 @@ public class ConditionalClass {
         return player;
     }
 
+    public static List<String> displayThreePlayers(String game) {
+        String player;
+        List<String> players = new List<String>();
+        if (game == 'Cricket') {
+            players.add('Sachin Tendulkar');
+            players.add('Babar Azam');
+            players.add('Trent Boult');
+        } else if (game == 'Football') {
+            players.add('Cristiano Ronaldo');
+            players.add('Lionel Messi');
+            players.add('Erling Haaland');
+        } else if (game == 'Basketball') {
+            players.add('LeBron James');
+            players.add('Michael Jordan');
+            players.add('Magic Johnson');
+        } else {
+            players.add('Game not in the list');
+        }
+        return players;
+    }
+
+    public static List<String> displayCities(String country) {
+        String capital;
+        List<String> cities = new List<String>();
+        if (country == 'New Zealand') {
+            cities.add('Wellington');
+            cities.add('Auckland');
+        } 
+        else if (country == 'India') {            
+            cities.add('Delhi');
+            cities.add('Mumbai');
+        }
+        else if (country == 'Australia') {    
+            cities.add('Sydney');
+            cities.add('Canberra');
+        }
+        else {
+            cities.add('Not in the list');          
+        }
+
+        return(cities);
+    }
+
+    public static String displayGamePlayer(String game) {
+        Map<String, String> player = new Map<String, String>();
+        if (game == 'Cricket') {
+            player.put('Cricket','Sachin Tendulkar');
+        } else if (game == 'Football') {
+            player.put('Football','Cristiano Ronaldo');
+        } else if (game == 'Basketball') {
+            player.put('Basketball','LeBron James');
+        } else {
+            player.put('Error','Game not in the list');
+        }
+        return player.get(game);
+    }
+
 }
