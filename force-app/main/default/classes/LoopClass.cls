@@ -56,4 +56,12 @@ public class LoopClass {
         }
     }
 
+    public static void sumNumbers() {
+        Integer sum = 0;
+        for (Integer num = 1; num <= 100; num++) {
+            sum = sum + num;
+        }
+        System.debug(sum);
+    }
+
 }
