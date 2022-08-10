@@ -1,1 +1,1 @@
-CollectionClass.friendsList();
+SObjectClass.createBulkContacts();

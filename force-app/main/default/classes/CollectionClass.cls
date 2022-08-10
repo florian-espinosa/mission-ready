@@ -44,7 +44,7 @@ public class CollectionClass {
 
     public static void carsList() {
         List<String> cars = new List<String>();
-        cars.add('BMW Mini');
+        cars.add('BMW');
         cars.add('Audi');
         cars.add('Porsche');
         cars.add('Ferrari');
