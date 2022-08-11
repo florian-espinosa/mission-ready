@@ -1,1 +1,1 @@
-SObjectClass.createBulkContacts();
+SObjectClass.getUpdateOpps();
