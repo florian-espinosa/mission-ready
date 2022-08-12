@@ -249,7 +249,7 @@ public with sharing class SObjectClass {
         List<Contact> conList = [SELECT Id,Department,MailingCountry,AccountId FROM Contact where AccountId =: accountId and  Department= 'Household Applicances'  ];
            
           List<Contact> contactToUpdate = new List<Contact>();
-          for(Contact con:conList){
+          for (Contact con:conList){
               con.MailingCountry = 'New Zealand';    
               contactToUpdate.add(con);
           }  
