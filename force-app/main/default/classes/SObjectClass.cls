@@ -268,7 +268,7 @@ public with sharing class SObjectClass {
         insert newOpp;
 
         Opportunity oppDet = [SELECT Name, StageName, Amount, Type, AccountId 
-                            FROM Opportunity WHERE id = :newOpp.Id];
+                              FROM Opportunity WHERE id = :newOpp.Id];
         System.debug(oppDet);
     }
 
