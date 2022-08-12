@@ -1,1 +1,1 @@
-SObjectClass.getUpdateOpps();
+SObjectClass.createOpp('Prospecting', 10000.00, 'New Customer', '0015i00000MDEl9AAH');

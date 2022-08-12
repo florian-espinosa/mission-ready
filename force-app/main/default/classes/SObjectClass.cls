@@ -187,6 +187,89 @@ public with sharing class SObjectClass {
         System.debug(updatedList);
     }
 
+    public static void createOppWithAcc2() {
+        Opportunity oppRec = new Opportunity();
+        oppRec.Name = 'New Opportunity';
+        oppRec.CloseDate = Date.today();
+        oppRec.StageName = 'Qualification';
+        oppRec.AccountId = '0015i00000MDEl1AAH';
+        insert oppRec;
+        System.debug(oppRec);
+    }
 
+    public static void createAccCon() {
+        // Create account 1
+        Account accRec = new Account();
+        accRec.Name = 'Warehouse';
+        // Create account 2
+        Account accRec2 = new Account();
+        accRec2.Name = 'Noel Leeming';
+        // Create account list
+        List<Account> accList = new List<Account>();
+        // Populate the list and insert records
+        accList.add(accRec);
+        accList.add(accRec2);
+        insert accList;
+        // Create contact 1
+        Contact conRec = new Contact();
+        conRec.FirstName = 'Warehouse';
+        conRec.LastName = 'Sales Engineer';
+        conRec.AccountId = accRec.Id;
+        // Create contact 2
+        Contact conRec2 = new Contact();
+        conRec2.FirstName = 'Noel Leeming';
+        conRec2.LastName = 'Sales Engineer';
+        conRec2.AccountId = accRec2.Id;
+        // Create contact list 
+        List<Contact> conList = new List<Contact>();
+        // Populate list and insert records
+        conList.add(conRec);
+        conList.add(conRec2);
+        insert conList;
+        // Create list using SOQL
+        List<Contact> conList2 = [SELECT Id  FROM  Contact WHERE CreatedDate = TODAY];
+        // Create dump list
+        List<Contact> updatedList = new List<Contact>();
+        for (Contact rec : conList2) {
+            // Update department
+            rec.Department = 'Household Appliances';
+            // Add record in dump list
+            updatedList.add(rec);
+        }
+        // Update records using dump list
+        update updatedList;
+
+        System.debug(accList);
+        System.debug(conList);
+        System.debug(updatedList);
+    }
+
+    public static void updateContactCountry(String accountId){
+        
+        List<Contact> conList = [SELECT Id,Department,MailingCountry,AccountId FROM Contact where AccountId =: accountId and  Department= 'Household Applicances'  ];
+           
+          List<Contact> contactToUpdate = new List<Contact>();
+          for(Contact con:conList){
+              con.MailingCountry = 'New Zealand';    
+              contactToUpdate.add(con);
+          }  
+          update contactToUpdate;
+          
+    }
+
+    public static void createOpp(String varStage, Decimal varAmount, String varType, String varAccountId) {
+        Opportunity newOpp = new Opportunity();
+        newOpp.Name = 'New Opp';
+        newOpp.StageName = varStage;
+        newOpp.Amount = varAmount;
+        newOpp.Type = varType;
+        newOpp.AccountId = varAccountId;
+        newOpp.CloseDate = Date.today();
+        insert newOpp;
+
+        Opportunity oppDet = [SELECT Name, StageName, Amount, Type, AccountId 
+                            FROM Opportunity WHERE id = :newOpp.Id];
+        System.debug(oppDet);
+    }
 
 }
